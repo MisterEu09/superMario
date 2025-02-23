@@ -1,0 +1,151 @@
+* {
+    margin: 0;  
+    padding: 0; 
+    box-sizing: border-box;   
+}
+body {
+    background-color: #b3e5fc; /* Cor de fundo geral */
+}
+@font-face { font-family: SuperMario; src: url(../src/SuperMario256.ttf); } 
+.game-board {
+
+    width: 98%;
+    height: 500px;
+    border-bottom: 15px solid #0da453;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background:
+
+linear-gradient(#87CEEB, #E0F6FF);
+}
+
+.pipe{
+    
+    position: absolute;
+    bottom: 0;
+    width: 80px;
+    animation: pipe-animation 1.2s infinite linear; 
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5)); /* Sombra no cano */
+}
+.mario{
+    width: 100px;
+    position: absolute;
+    bottom: 0;
+    filter: brightness(1.1); /* Brilho no Mario */
+}
+.jump{
+    animation: jump 500ms ease-out;
+}
+
+.clouds {
+    width: 550px;
+    position: absolute;
+    animation: clouds-animation 15s infinite linear; /* Nuvens mais lentas */
+}
+
+
+.game-over-screen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-family: 'SuperMario', sans-serif; /* Fonte mais legível */
+}
+
+#restart-button {
+    padding: 12px 24px;
+    font-family: 'SuperMario', sans-serif; /* Fonte mais legível */
+    margin: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease; /* Transição suave */
+}
+
+#restart-button:hover {
+    background-color: #45a049;
+}
+
+.score {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 24px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.3); /* Fundo semi-transparente */
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-family: 'SuperMario', sans-serif; /* Fonte mais legível */
+}
+
+@keyframes pipe-animation {
+    from {
+        right:
+        -80px;
+    }
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes jump {
+
+    0% {
+    
+    bottom: 0;
+    
+    }
+    
+    40% {
+    
+    bottom: 180px;
+    
+    }
+    
+    50% {
+    
+    bottom: 200px;
+    
+    }
+    
+    60% {
+    
+    bottom: 190px;
+    
+    }
+    
+    100% {
+    
+    bottom: 0;
+    
+    }
+    
+}
+
+
+@keyframes clouds-animation {
+
+    from {
+    
+    right: -550px;
+    
+    }
+    
+    to {
+    
+    right: 100%;
+    
+    }
+}
+
