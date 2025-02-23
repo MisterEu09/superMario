@@ -149,3 +149,17 @@ linear-gradient(#87CEEB, #E0F6FF);
     }
 }
 
+footer{
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    background-color: #4CAF50;
+    padding: 40px 0;
+    text-align: center;
+    margin-top:40px;
+    font-family: superMario;
+    color: aliceblue;
+}
+.i{
+    font-family:'Courier New', Courier, monospace;
+}
